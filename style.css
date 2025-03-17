@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.ramen-menu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.ramen-menu img {
+    width: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.ramen-menu img:hover {
+    border-color: orange;
+}
+.ramen-detail, .new-ramen-form {
+    margin-top: 20px;
+}
+.ramen-detail img {
+    width: 200px;
+}
