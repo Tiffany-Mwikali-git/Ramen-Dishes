@@ -9,46 +9,44 @@ const ramens = [
         restaurant: "Ippudo", 
         rating: 4, 
         comments: "Very satisfying!", 
-        image: "/images/kojiro.jpj" },
+        image: "./images/kojiro.jpg" },
     { name: "naruto", 
         restaurant: "ipad", 
         rating: 4, 
         comments: "Very satisfying!", 
-        image: "/images/naruto.jpj" },
+        image: "./images/naruto.jpg" },
     {name: "kojiro", 
         restaurant: "ipad", 
         rating: 3, 
         comments: "Very satisfying!", 
-        image: "/images/nirvana.jpj" },
+        image: "./images/nirvana.jpg" },
     {name: "kara", 
         restaurant: "ipady", 
         rating: 4, 
         comments: "Very satisfying!", 
-        image: "/images/shoyu.jpj" }      
+        image: "./images/shoyu.jpg" }      
 ];
 
 // Display ramen images
-function displayRamens() {
+function displayRamens() { 
     const menu = document.getElementById("ramen-menu");
     menu.innerHTML =""; // Clear any existing images
     ramens.forEach(ramen => {
-        const li = document.createElement("li");
         const img = document.createElement('img');
         img.src = ramen.image;
         img.alt = ramen.name;
         img.addEventListener("click", () => handleClick(ramen));
-        li.appendChild(img);
-        menu.appendChild(li);
+        menu.appendChild(img);
     });
 }
 
 // Handle ramen image click
 function handleClick(ramen) {
     document.getElementById("detail-image").src = ramen.image;
-    document.getElementById("detail-name").textContent = ramen.name;
-    document.getElementById("detail-restaurant").textContent = ramen.restaurant;
-    document.getElementById("detail-rating").textContent = ramen.rating;
-    document.getElementById("detail-comments").textContent = ramen.comments;
+    document.getElementById("detail-name").textContent = `Name: ${ramen.name}`;
+    document.getElementById("detail-restaurant").textContent = `Restraunt: ${ramen.restaurant}`;
+    document.getElementById("detail-rating").textContent = `Rating: ${ramen.rating}`;
+    document.getElementById("detail-comments").textContent = `Comments: ${ramen.comments}`;
 }
 
 // Handle new ramen form submission
